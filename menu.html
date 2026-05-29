@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Pizzeria Napoli Leipzig · 170+ Dishes · Halal · Vegan · Vollkorn</title>
+<meta name="description" content="Full menu of Pizzeria Napoli, Jahnallee Leipzig. 170+ dishes: classic & special pizza, Vollkorn, vegan, Flammkuchen, pasta, burgers, salads, kids. Halal certified. Delivery across Leipzig.">
+<meta name="keywords" content="Pizza Leipzig menu, Cheap Pizza Leipzig, Halal Pizza Leipzig, Vegan Pizza Leipzig, Pizzeria Napoli Leipzig menu, Pizza Delivery Leipzig">
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:title" content="Menu · Pizzeria Napoli Leipzig · 170+ Dishes · Halal · Vegan · Vollkorn">
+<meta property="og:description" content="Full menu: classic & special pizza, Vollkorn, vegan, Flammkuchen, pasta, burgers, salads, kids. Halal certified. Delivery across Leipzig.">
+<meta property="og:image" content="https://pizzerianapolis.de/wp-content/uploads/2025/09/cropped-cropped-logo-removebg-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+body { padding-bottom: 80px; }
+
+/* sticky category nav */
+.menu-subnav {
+  position: sticky;
+  top: 69px;
+  z-index: 40;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.menu-subnav__track {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 6px;
+  padding: 12px 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.menu-subnav__track::-webkit-scrollbar { display: none; }
+.menu-subnav a {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s;
+}
+.menu-subnav a:hover { color: var(--white); }
+.menu-subnav a.active { background: var(--red); color: var(--white); }
+
+/* menu hero */
+.menu-hero {
+  background: var(--cream);
+  padding: 56px 24px 40px;
+  border-bottom: 1px solid var(--grey-2);
+}
+.menu-hero__inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.menu-hero h1 { font-size: clamp(40px, 6vw, 72px); text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.9; }
+.menu-hero h1 .red { color: var(--red); }
+.menu-hero p { font-size: 16px; color: var(--char); margin-top: 12px; max-width: 520px; }
+.menu-legend { display: flex; gap: 16px; flex-wrap: wrap; }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--char); }
+.legend-dot { font-size: 14px; }
+
+.note-banner {
+  max-width: 1280px;
+  margin: 24px auto 0;
+  background: #FFF4E0;
+  border: 1px solid #F0D9A8;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #7A5A12;
+}
+.note-banner strong { font-weight: 800; }
+
+/* menu sections */
+.menu-section { max-width: 1280px; margin: 0 auto; padding: 64px 24px 0; scroll-margin-top: 130px; }
+.menu-section__head { display: flex; align-items: baseline; gap: 16px; border-bottom: 3px solid var(--ink); padding-bottom: 16px; margin-bottom: 32px; }
+.menu-section__head h2 { font-size: clamp(28px, 4vw, 42px); text-transform: uppercase; letter-spacing: -0.02em; }
+.menu-section__head .count { font-size: 14px; font-weight: 700; color: var(--grey-3); margin-left: auto; letter-spacing: 0.06em; }
+.menu-section__sub { font-size: 15px; color: var(--char); margin-top: -20px; margin-bottom: 28px; }
+
+.menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 56px; }
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grey-2);
+}
+.menu-item__main { flex: 1; min-width: 0; }
+.menu-item__name { font-weight: 700; font-size: 17px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.menu-item__badges { display: inline-flex; gap: 5px; }
+.mbadge { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 6px; border-radius: 3px; }
+.mbadge.halal { background: rgba(46,158,78,0.14); color: var(--green); }
+.mbadge.vegan { background: rgba(46,158,78,0.14); color: var(--green); }
+.mbadge.whole { background: rgba(204,51,51,0.1); color: var(--red); }
+.mbadge.spicy { background: rgba(204,51,51,0.1); color: var(--red); }
+.menu-item__desc { font-size: 13px; color: var(--grey-3); margin-top: 2px; line-height: 1.4; }
+.menu-item__dots { flex: 1; border-bottom: 2px dotted var(--grey-2); transform: translateY(-4px); min-width: 16px; }
+.menu-item__price { font-family: "Archivo"; font-weight: 900; font-size: 17px; white-space: nowrap; }
+.menu-item__price .sizes { display: block; font-size: 11px; font-weight: 600; color: var(--grey-3); text-align: right; margin-top: 2px; letter-spacing: 0.02em; }
+@media (max-width: 760px) { .menu-grid { grid-template-columns: 1fr; gap: 0; } }
+
+/* size key for pizza */
+.size-key {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  background: var(--grey-1);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-bottom: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--char);
+}
+.size-key b { color: var(--red); }
+
+/* inline CTA */
+.inline-cta {
+  max-width: 1280px;
+  margin: 56px auto 0;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.inline-cta__text { font-family: "Archivo"; font-weight: 900; font-size: clamp(20px, 3vw, 28px); text-transform: uppercase; letter-spacing: -0.01em; }
+.inline-cta__text span { opacity: 0.8; font-weight: 600; font-size: 15px; text-transform: none; display: block; letter-spacing: 0; }
+
+/* footer note */
+.menu-footnote { max-width: 1280px; margin: 64px auto 0; padding: 0 24px; }
+.menu-footnote__inner { border-top: 1px solid var(--grey-2); padding-top: 24px; font-size: 13px; color: var(--grey-3); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* sticky bottom CTA */
+.sticky-order {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 60;
+  background: var(--ink);
+  color: var(--white);
+  border-top: 3px solid var(--red);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sticky-order__info { display: flex; align-items: center; gap: 16px; font-size: 14px; }
+.sticky-order__info strong { font-family: "Archivo"; font-weight: 900; font-size: 16px; }
+.sticky-order__info .min { color: rgba(255,255,255,0.6); font-size: 13px; }
+.sticky-order__cta { display: flex; gap: 10px; }
+.sticky-order .phone-link { color: var(--white); font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+@media (max-width: 640px) {
+  .sticky-order__info .min { display: none; }
+  .sticky-order .phone-link span { display: none; }
+}
+.floating-call { bottom: 84px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">
+      <img class="logo__img" src="assets/napoli-logo.png" alt="Pizzeria Napoli logo" onerror="this.style.display='none'">
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-en="&larr; Back to Home" data-de="&larr; Zur Startseite">&larr; Back to Home</a>
+      <a href="menu.html" class="active" data-en="Menu" data-de="Speisekarte">Menu</a>
+      <a href="index.html#location" data-en="Visit" data-de="Besuch">Visit</a>
+    </nav>
+    <div class="header-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <a href="tel:+491774700696" class="btn btn--primary btn--sm">&#128222; +49 177 4700696</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer__panel">
+    <a href="index.html" data-en="&larr; Home" data-de="&larr; Start">&larr; Home</a>
+    <a href="menu.html" data-en="Menu" data-de="Speisekarte">Menu</a>
+    <a href="index.html#location" data-en="Visit" data-de="Besuch">Visit</a>
+    <div class="drawer-cta">
+      <a href="tel:+491774700696" class="btn btn--primary" data-en="&#128222; Call to Order" data-de="&#128222; Anrufen &amp; Bestellen">&#128222; Call to Order</a>
+      <a href="https://wa.me/4915733140648?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20bestellen." target="_blank" rel="noopener noreferrer" class="btn btn--ghost" data-en="Order via WhatsApp" data-de="Per WhatsApp bestellen">Order via WhatsApp</a>
+      <div class="lang-toggle" style="margin-top:8px;align-self:flex-start;">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY NAV -->
+<nav class="menu-subnav" id="subnav">
+  <div class="menu-subnav__track">
+    <a href="#classic" data-en="&#127829; Classic" data-de="&#127829; Klassisch">&#127829; Classic</a>
+    <a href="#special" data-en="&#127829; Special" data-de="&#127829; Spezial">&#127829; Special</a>
+    <a href="#vegan" data-en="&#127793; Vegan" data-de="&#127793; Vegan">&#127793; Vegan</a>
+    <a href="#calzone" data-en="&#129385; Calzone" data-de="&#129385; Calzone">&#129385; Calzone</a>
+    <a href="#flammkuchen" data-en="&#128293; Flammkuchen" data-de="&#128293; Flammkuchen">&#128293; Flammkuchen</a>
+    <a href="#burgers" data-en="&#127828; Burgers" data-de="&#127828; Burger">&#127828; Burgers</a>
+    <a href="#salads" data-en="&#129367; Salads" data-de="&#129367; Salate">&#129367; Salads</a>
+    <a href="#starters" data-en="&#127838; Starters" data-de="&#127838; Vorspeisen">&#127838; Starters</a>
+    <a href="#kids" data-en="&#128118; Kids" data-de="&#128118; Kinder">&#128118; Kids</a>
+    <a href="#sides" data-en="&#129474; Sides" data-de="&#129474; Beilagen">&#129474; Sides</a>
+    <a href="#coffee" data-en="&#9749; Coffee" data-de="&#9749; Kaffee">&#9749; Coffee</a>
+    <a href="#drinks" data-en="&#129380; Drinks" data-de="&#129380; Getränke">&#129380; Drinks</a>
+    <a href="#dessert" data-en="&#127856; Dessert" data-de="&#127856; Dessert">&#127856; Dessert</a>
+  </div>
+</nav>
+
+<!-- MENU HERO -->
+<section class="menu-hero">
+  <div class="menu-hero__inner">
+    <div>
+      <h1 data-en="The Full <span class="red">Menu</span>" data-de="Die ganze <span class="red">Speisekarte</span>">The Full <span class="red">Menu</span></h1>
+      <p data-en="Pizza, vegan pizza, calzone, Flammkuchen, burgers, salads & more. All meat Halal. Prices for collection & delivery." data-de="Pizza, vegane Pizza, Calzone, Flammkuchen, Burger, Salate & mehr. Alles Fleisch Halal. Preise für Abholung & Lieferung.">Pizza, vegan pizza, calzone, Flammkuchen, burgers, salads & more. All meat Halal. Prices for collection & delivery.</p>
+    </div>
+    <div class="menu-legend">
+      <span class="legend-item"><span class="legend-dot">&#129385;</span> Halal</span>
+      <span class="legend-item"><span class="legend-dot">&#127793;</span> Vegan</span>
+      <span class="legend-item"><span class="legend-dot">&#127798;</span> <span data-en="Spicy" data-de="Scharf">Spicy</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="classic">
+  <div class="menu-section__head"><h2>&#127829; <span data-en="Pizza Classic" data-de="Pizza Klassisch">Pizza Classic</span></h2><span class="count" data-en="23 pizzas" data-de="23 Pizzen">23 pizzas</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Margherita</div><div class="menu-item__desc" data-en="Tomato sauce & cheese" data-de="Tomatensauce & Käse">Tomato sauce & cheese</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;8,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Champignons</div><div class="menu-item__desc" data-en="Cheese & mushrooms" data-de="Käse & Champignons">Cheese & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Carciofi e Cipolla</div><div class="menu-item__desc" data-en="Cheese, artichokes & onions" data-de="Käse, Artischocken & Zwiebeln">Cheese, artichokes & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Salami <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Cheese & salami" data-de="Käse & Salami">Cheese & salami</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Prosciutto <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Cheese & ham" data-de="Käse & Schinken">Cheese & ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Diavolo <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Cheese, salami & jalapeños" data-de="Käse, Salami & Jalapeños">Cheese, salami & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Melanzana</div><div class="menu-item__desc" data-en="Grana Padano, aubergine & rocket" data-de="Grana Padano, Aubergine & Rucola">Grana Padano, aubergine & rocket</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Tonno</div><div class="menu-item__desc" data-en="Cheese, tuna & onions" data-de="Käse, Thunfisch & Zwiebeln">Cheese, tuna & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Spinaci</div><div class="menu-item__desc" data-en="Cheese, spinach & onions" data-de="Käse, Spinat & Zwiebeln">Cheese, spinach & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Kartoffel</div><div class="menu-item__desc" data-en="Hollandaise, potato, spinach & onions" data-de="Sauce Hollandaise, Kartoffeln, Spinat & Zwiebeln">Hollandaise, potato, spinach & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Broccoli</div><div class="menu-item__desc" data-en="Cheese, broccoli, peppers & corn" data-de="Käse, Brokkoli, Paprika & Mais">Cheese, broccoli, peppers & corn</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Quattro Formaggi</div><div class="menu-item__desc" data-en="Gorgonzola, cream cheese & Grana Padano" data-de="Gorgonzola, Frischkäse & Grana Padano">Gorgonzola, cream cheese & Grana Padano</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Hawaii <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Cheese, ham & pineapple" data-de="Käse, Schinken & Ananas">Cheese, ham & pineapple</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegetariana</div><div class="menu-item__desc" data-en="Cheese, corn, spinach & olives" data-de="Käse, Mais, Spinat & Oliven">Cheese, corn, spinach & olives</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Mozzarella di Caprese</div><div class="menu-item__desc" data-en="Mozzarella, tomatoes, rocket & balsamic" data-de="Mozzarella, Tomaten, Rucola & Balsamico">Mozzarella, tomatoes, rocket & balsamic</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Napoli</div><div class="menu-item__desc" data-en="Cheese, anchovies & olives" data-de="Käse, Sardellen & Oliven">Cheese, anchovies & olives</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Scampi</div><div class="menu-item__desc" data-en="Cheese, scampi & garlic" data-de="Käse, Scampi & Knoblauch">Cheese, scampi & garlic</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Frutti di Mare</div><div class="menu-item__desc" data-en="Seafood & garlic" data-de="Meeresfrüchte & Knoblauch">Seafood & garlic</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Amore <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Tomatoes, minced meat & onions" data-de="Tomaten, Hackfleisch & Zwiebeln">Tomatoes, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Chicken Fajita <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Peppers, chicken & onions" data-de="Paprika, Hähnchen & Zwiebeln">Peppers, chicken & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Quattro Stagioni <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Ham, artichokes, mushrooms & olives" data-de="Schinken, Artischocken, Champignons & Oliven">Ham, artichokes, mushrooms & olives</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Hähnchen <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Chicken, onions & mushrooms" data-de="Hähnchen, Zwiebeln & Champignons">Chicken, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Philadelphia</div><div class="menu-item__desc" data-en="Hollandaise, salmon, rocket & cream cheese" data-de="Sauce Hollandaise, Lachs, Rucola & Frischkäse">Hollandaise, salmon, rocket & cream cheese</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="special">
+  <div class="menu-section__head"><h2>&#127829; <span data-en="Pizza Special & Deluxe" data-de="Pizza Spezial & Deluxe">Pizza Special & Deluxe</span></h2><span class="count" data-en="47 pizzas &middot; loaded" data-de="47 Pizzen &middot; üppig belegt">47 pizzas &middot; loaded</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Speciale <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, ham & mushrooms" data-de="Salami, Schinken & Champignons">Salami, ham & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Amore mio <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami & onions" data-de="Bacon, Salami & Zwiebeln">Bacon, salami & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Garden Lovers</div><div class="menu-item__desc" data-en="Tomatoes, corn, spinach, onions & mushrooms" data-de="Tomaten, Mais, Spinat, Zwiebeln & Champignons">Tomatoes, corn, spinach, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Diavolo <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chilli sauce, bacon, salami & jalapeños" data-de="Chilisauce, Bacon, Salami & Jalapeños">Chilli sauce, bacon, salami & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ Texas <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="BBQ sauce, bacon, salami, onions & peppers" data-de="BBQ-Sauce, Bacon, Salami, Zwiebeln & Paprika">BBQ sauce, bacon, salami, onions & peppers</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, minced meat, onions, peppers & mushrooms" data-de="Salami, Hackfleisch, Zwiebeln, Paprika & Champignons">Salami, minced meat, onions, peppers & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Chicken Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, chicken, minced meat, peppers, onions & mushrooms" data-de="Bacon, Hähnchen, Hackfleisch, Paprika, Zwiebeln & Champignons">Bacon, chicken, minced meat, peppers, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami, minced meat, peppers, onions & mushrooms" data-de="Bacon, Salami, Hackfleisch, Paprika, Zwiebeln & Champignons">Bacon, salami, minced meat, peppers, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Knobi Loves</div><div class="menu-item__desc" data-en="Garlic sauce, corn, peppers & mushrooms" data-de="Knoblauchsauce, Mais, Paprika & Champignons">Garlic sauce, corn, peppers & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Miami</div><div class="menu-item__desc" data-en="Corn, peppers, spinach & feta" data-de="Mais, Paprika, Spinat & Feta">Corn, peppers, spinach & feta</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">La Mia <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, ham & onions" data-de="Salami, Schinken & Zwiebeln">Salami, ham & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Florida Chicken <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Pineapple, chicken & mushrooms" data-de="Ananas, Hähnchen & Champignons">Pineapple, chicken & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Hollandaise Veggie</div><div class="menu-item__desc" data-en="Hollandaise, corn & spinach" data-de="Sauce Hollandaise, Mais & Spinat">Hollandaise, corn & spinach</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ Caribbean <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="BBQ sauce, pineapple, chicken & mushrooms" data-de="BBQ-Sauce, Ananas, Hähnchen & Champignons">BBQ sauce, pineapple, chicken & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Classic <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami & mushrooms" data-de="Bacon, Salami & Champignons">Bacon, salami & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Sweet Chili Caribbean <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Sweet-chili sauce, pineapple, chicken & mushrooms" data-de="Sweet-Chili-Sauce, Ananas, Hähnchen & Champignons">Sweet-chili sauce, pineapple, chicken & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Venezia Loves <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Hollandaise, broccoli & ham" data-de="Sauce Hollandaise, Brokkoli & Schinken">Hollandaise, broccoli & ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ Chicken <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="BBQ sauce, chicken, peppers, salami & mushrooms" data-de="BBQ-Sauce, Hähnchen, Paprika, Salami & Champignons">BBQ sauce, chicken, peppers, salami & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Mexicana <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, salami, jalapeños, minced meat & onions" data-de="Chilisauce, Salami, Jalapeños, Hackfleisch & Zwiebeln">Chili sauce, salami, jalapeños, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Amico <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Minced meat, salami, mushrooms & jalapeños" data-de="Hackfleisch, Salami, Champignons & Jalapeños">Minced meat, salami, mushrooms & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">California Style <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Tomatoes, chicken, onions & mushrooms" data-de="Tomaten, Hähnchen, Zwiebeln & Champignons">Tomatoes, chicken, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bianca Loves</div><div class="menu-item__desc" data-en="Hollandaise, broccoli, peppers, tomatoes, corn & onions" data-de="Sauce Hollandaise, Brokkoli, Paprika, Tomaten, Mais & Zwiebeln">Hollandaise, broccoli, peppers, tomatoes, corn & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Loves <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Onions, bacon & ham" data-de="Zwiebeln, Bacon & Schinken">Onions, bacon & ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Curry Chicken <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Curry sauce, chicken, mushrooms & pineapple" data-de="Currysauce, Hähnchen, Champignons & Ananas">Curry sauce, chicken, mushrooms & pineapple</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Knobi Chicken Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Garlic sauce, chicken, salami, peppers, mushrooms & onion" data-de="Knoblauchsauce, Hähnchen, Salami, Paprika, Champignons & Zwiebeln">Garlic sauce, chicken, salami, peppers, mushrooms & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">San Francisco <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, tomatoes, feta, minced meat & onions" data-de="Salami, Tomaten, Feta, Hackfleisch & Zwiebeln">Salami, tomatoes, feta, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Griechisch <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Minced meat, salami, onions, olives & feta" data-de="Hackfleisch, Salami, Zwiebeln, Oliven & Feta">Minced meat, salami, onions, olives & feta</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Amsterdam <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Tomatoes, chicken, spinach, onions & mushrooms" data-de="Tomaten, Hähnchen, Spinat, Zwiebeln & Champignons">Tomatoes, chicken, spinach, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ Texas Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="BBQ sauce, bacon, salami, onions, peppers & minced meat" data-de="BBQ-Sauce, Bacon, Salami, Zwiebeln, Paprika & Hackfleisch">BBQ sauce, bacon, salami, onions, peppers & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Omega <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Tomatoes, mozzarella, rocket, salami & minced meat" data-de="Tomaten, Mozzarella, Rucola, Salami & Hackfleisch">Tomatoes, mozzarella, rocket, salami & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Teriyaki <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Smokey BBQ sauce, bacon, salami, peppers & onion" data-de="Rauchige BBQ-Sauce, Bacon, Salami, Paprika & Zwiebeln">Smokey BBQ sauce, bacon, salami, peppers & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bacon Style <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Hollandaise, potato, bacon, spinach & onion" data-de="Sauce Hollandaise, Kartoffeln, Bacon, Spinat & Zwiebeln">Hollandaise, potato, bacon, spinach & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Knobi Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Garlic sauce, salami, peppers, minced meat, onions & mushrooms" data-de="Knoblauchsauce, Salami, Paprika, Hackfleisch, Zwiebeln & Champignons">Garlic sauce, salami, peppers, minced meat, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Texas Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami, onions & minced meat" data-de="Bacon, Salami, Zwiebeln & Hackfleisch">Bacon, salami, onions & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Spicy Chicken Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, salami, chicken, peppers, jalapeños, onions & mushrooms" data-de="Chilisauce, Salami, Hähnchen, Paprika, Jalapeños, Zwiebeln & Champignons">Chili sauce, salami, chicken, peppers, jalapeños, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Caesar Chicken <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Caesar sauce, chicken, salami & Grana Padano" data-de="Caesar-Sauce, Hähnchen, Salami & Grana Padano">Caesar sauce, chicken, salami & Grana Padano</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Chicken Teriyaki <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Smokey BBQ sauce, chicken, salami, peppers & onion" data-de="Rauchige BBQ-Sauce, Hähnchen, Salami, Paprika & Zwiebeln">Smokey BBQ sauce, chicken, salami, peppers & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Avocado Loves</div><div class="menu-item__desc" data-en="Tomatoes, avocado, spinach, mushrooms, onions & peppers" data-de="Tomaten, Avocado, Spinat, Champignons, Zwiebeln & Paprika">Tomatoes, avocado, spinach, mushrooms, onions & peppers</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Caesar Bacon <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Caesar sauce, bacon, chicken, onions & Grana Padano" data-de="Caesar-Sauce, Bacon, Hähnchen, Zwiebeln & Grana Padano">Caesar sauce, bacon, chicken, onions & Grana Padano</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Texas Loves <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami, peppers, onions, minced meat & jalapeños" data-de="Bacon, Salami, Paprika, Zwiebeln, Hackfleisch & Jalapeños">Bacon, salami, peppers, onions, minced meat & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ Bacon Chicken <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="BBQ sauce, bacon, chicken, salami, peppers, mushrooms & onion" data-de="BBQ-Sauce, Bacon, Hähnchen, Salami, Paprika, Champignons & Zwiebeln">BBQ sauce, bacon, chicken, salami, peppers, mushrooms & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Spicy Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, salami, peppers, jalapeños, minced meat, onions & mushrooms" data-de="Chilisauce, Salami, Paprika, Jalapeños, Hackfleisch, Zwiebeln & Champignons">Chili sauce, salami, peppers, jalapeños, minced meat, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bianca Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Hollandaise, peppers, salami, onions & minced meat" data-de="Sauce Hollandaise, Paprika, Salami, Zwiebeln & Hackfleisch">Hollandaise, peppers, salami, onions & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Chili con Carne <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, tomatoes, peppers, corn, jalapeños, minced meat & onions" data-de="Chilisauce, Tomaten, Paprika, Mais, Jalapeños, Hackfleisch & Zwiebeln">Chili sauce, tomatoes, peppers, corn, jalapeños, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Chicken Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Chicken, salami, peppers, mushrooms & onion" data-de="Hähnchen, Salami, Paprika, Champignons & Zwiebeln">Chicken, salami, peppers, mushrooms & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Pizza Supreme <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, minced meat, peppers, onions & mushrooms" data-de="Salami, Hackfleisch, Paprika, Zwiebeln & Champignons">Salami, minced meat, peppers, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Milano <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Ham, salami, mushrooms & minced meat" data-de="Schinken, Salami, Champignons & Hackfleisch">Ham, salami, mushrooms & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+  </div>
+</section>
+
+<div class="inline-cta">
+  <div class="inline-cta__text" data-en="Spoiled for choice?" data-de="Die Qual der Wahl?">Spoiled for choice?<span data-en="Call us and we will sort your order." data-de="Ruf an, wir nehmen deine Bestellung auf.">Call us and we will sort your order.</span></div>
+  <a href="tel:+491774700696" class="btn btn--light btn--lg" data-en="&#128222; Call to Order" data-de="&#128222; Anrufen &amp; Bestellen">&#128222; Call to Order</a>
+</div>
+
+<section class="menu-section" id="vegan">
+  <div class="menu-section__head"><h2>&#127793; <span data-en="Vegan Pizza" data-de="Vegane Pizza">Vegan Pizza</span></h2><span class="count" data-en="32 pizzas &middot; 100% plant-based" data-de="32 Pizzen &middot; 100% pflanzlich">32 pizzas &middot; 100% plant-based</span></div>
+  <p class="menu-section__sub" data-en="One of the biggest vegan pizza ranges in Leipzig — vegan cheese, vegan salami, vegan chicken & vegan mince." data-de="Eine der größten Auswahlen an veganer Pizza in Leipzig — veganer Käse, vegane Salami, veganes Hähnchen & veganes Hack.">One of the biggest vegan pizza ranges in Leipzig — vegan cheese, vegan salami, vegan chicken & vegan mince.</p>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Margherita <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomato sauce & vegan cheese" data-de="Tomatensauce & veganer Käse">Tomato sauce & vegan cheese</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Funghi <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan cheese & mushrooms" data-de="Veganer Käse & Champignons">Vegan cheese & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Salami <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan cheese & vegan salami" data-de="Veganer Käse & vegane Salami">Vegan cheese & vegan salami</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Prosciutto <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan cheese & vegan ham" data-de="Veganer Käse & veganer Schinken">Vegan cheese & vegan ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Spinaci <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan cheese, spinach & tomatoes" data-de="Veganer Käse, Spinat & Tomaten">Vegan cheese, spinach & tomatoes</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Diavolo <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Vegan salami & jalapeños" data-de="Vegane Salami & Jalapeños">Vegan salami & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Vegetariana <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Olives, onions, corn & spinach" data-de="Oliven, Zwiebeln, Mais & Spinat">Olives, onions, corn & spinach</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Hawaii <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Pineapple & vegan ham" data-de="Ananas & veganer Schinken">Pineapple & vegan ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Veggie <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomatoes, corn & spinach" data-de="Tomaten, Mais & Spinat">Tomatoes, corn & spinach</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Seitan <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Onions, corn, mushrooms & peppers" data-de="Zwiebeln, Mais, Champignons & Paprika">Onions, corn, mushrooms & peppers</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Amore <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomatoes, vegan mince & onions" data-de="Tomaten, veganes Hack & Zwiebeln">Tomatoes, vegan mince & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Caribbean Chicken <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Pineapple, vegan chicken & mushrooms" data-de="Ananas, veganes Hähnchen & Champignons">Pineapple, vegan chicken & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan La Mia <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan salami, vegan ham & onions" data-de="Vegane Salami, veganer Schinken & Zwiebeln">Vegan salami, vegan ham & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Chicken Fajita <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Peppers, vegan chicken & onions" data-de="Paprika, veganes Hähnchen & Zwiebeln">Peppers, vegan chicken & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Amsterdam <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomatoes, vegan chicken, spinach, onions & mushrooms" data-de="Tomaten, veganes Hähnchen, Spinat, Zwiebeln & Champignons">Tomatoes, vegan chicken, spinach, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan San Francisco <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan salami, tomatoes, vegan feta, vegan mince & onions" data-de="Vegane Salami, Tomaten, veganer Feta, veganes Hack & Zwiebeln">Vegan salami, tomatoes, vegan feta, vegan mince & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Mozzarella di Caprese <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan feta, tomatoes, rocket & balsamic" data-de="Veganer Feta, Tomaten, Rucola & Balsamico">Vegan feta, tomatoes, rocket & balsamic</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Garden Loves <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomatoes, corn, spinach, onions & mushrooms" data-de="Tomaten, Mais, Spinat, Zwiebeln & Champignons">Tomatoes, corn, spinach, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Chili con Carne <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, tomatoes, peppers, corn, jalapeños, vegan mince & onions" data-de="Chilisauce, Tomaten, Paprika, Mais, Jalapeños, veganes Hack & Zwiebeln">Chili sauce, tomatoes, peppers, corn, jalapeños, vegan mince & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Mexicana <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, vegan salami, jalapeños, vegan mince & onions" data-de="Chilisauce, vegane Salami, Jalapeños, veganes Hack & Zwiebeln">Chili sauce, vegan salami, jalapeños, vegan mince & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Chicken Supreme <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan chicken, vegan salami, peppers, mushrooms & onion" data-de="Veganes Hähnchen, vegane Salami, Paprika, Champignons & Zwiebeln">Vegan chicken, vegan salami, peppers, mushrooms & onion</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Avocado Loves <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Tomatoes, avocado, spinach, onions, mushrooms & peppers" data-de="Tomaten, Avocado, Spinat, Zwiebeln, Champignons & Paprika">Tomatoes, avocado, spinach, onions, mushrooms & peppers</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Milano <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan salami, vegan ham, vegan mince & mushrooms" data-de="Vegane Salami, veganer Schinken, veganes Hack & Champignons">Vegan salami, vegan ham, vegan mince & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Amico <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan mince, mushrooms, jalapeños & vegan salami" data-de="Veganes Hack, Champignons, Jalapeños & vegane Salami">Vegan mince, mushrooms, jalapeños & vegan salami</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Sweet Chili Caribbean <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Sweet-chili sauce, pineapple, vegan chicken & mushrooms" data-de="Sweet-Chili-Sauce, Ananas, veganes Hähnchen & Champignons">Sweet-chili sauce, pineapple, vegan chicken & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Speciale <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan salami, vegan ham & mushrooms" data-de="Vegane Salami, veganer Schinken & Champignons">Vegan salami, vegan ham & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan BBQ Chicken <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan chicken, peppers, vegan salami & mushrooms" data-de="Veganes Hähnchen, Paprika, vegane Salami & Champignons">Vegan chicken, peppers, vegan salami & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Quattro Stagioni <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan ham, artichokes, olives & mushrooms" data-de="Veganer Schinken, Artischocken, Oliven & Champignons">Vegan ham, artichokes, olives & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Bacon Chicken Supreme <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan bacon, vegan salami, vegan chicken, peppers, onions & mushrooms" data-de="Veganer Bacon, vegane Salami, veganes Hähnchen, Paprika, Zwiebeln & Champignons">Vegan bacon, vegan salami, vegan chicken, peppers, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Spicy Supreme <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Chili sauce, vegan salami, peppers, jalapeños, vegan mince, onions & mushrooms" data-de="Chilisauce, vegane Salami, Paprika, Jalapeños, veganes Hack, Zwiebeln & Champignons">Chili sauce, vegan salami, peppers, jalapeños, vegan mince, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Supreme <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan salami, peppers, vegan mince, onions & mushrooms" data-de="Vegane Salami, Paprika, veganes Hack, Zwiebeln & Champignons">Vegan salami, peppers, vegan mince, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegan Bacon Supreme <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan bacon, vegan salami, vegan mince, peppers, onions & mushrooms" data-de="Veganer Bacon, vegane Salami, veganes Hack, Paprika, Zwiebeln & Champignons">Vegan bacon, vegan salami, vegan mince, peppers, onions & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,90</div></div>
+  </div>
+</section>
+
+<div class="inline-cta">
+  <div class="inline-cta__text" data-en="Vegan night sorted." data-de="Veganer Abend gesichert.">Vegan night sorted.<span data-en="Order the whole table by phone." data-de="Bestell den ganzen Tisch per Telefon.">Order the whole table by phone.</span></div>
+  <a href="tel:+491774700696" class="btn btn--light btn--lg" data-en="&#128222; Call to Order" data-de="&#128222; Anrufen &amp; Bestellen">&#128222; Call to Order</a>
+</div>
+
+<section class="menu-section" id="calzone">
+  <div class="menu-section__head"><h2>&#129385; <span data-en="Pizza Calzone" data-de="Pizza Calzone">Pizza Calzone</span></h2><span class="count" data-en="Folded & filled" data-de="Gefaltet & gefüllt">Folded & filled</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Margherita</div><div class="menu-item__desc" data-en="Folded — tomato & cheese" data-de="Gefaltet — Tomate & Käse">Folded — tomato & cheese</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Salami <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — salami" data-de="Gefaltet — Salami">Folded — salami</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Funghi</div><div class="menu-item__desc" data-en="Folded — mushrooms" data-de="Gefaltet — Champignons">Folded — mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Prosciutto <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — ham" data-de="Gefaltet — Schinken">Folded — ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Hawaii <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — ham & pineapple" data-de="Gefaltet — Schinken & Ananas">Folded — ham & pineapple</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Diavolo <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Folded — salami & jalapeños" data-de="Gefaltet — Salami & Jalapeños">Folded — salami & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Carciofi e Cipolla</div><div class="menu-item__desc" data-en="Folded — artichokes & onions" data-de="Gefaltet — Artischocken & Zwiebeln">Folded — artichokes & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone La Mia <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — salami, ham & onions" data-de="Gefaltet — Salami, Schinken & Zwiebeln">Folded — salami, ham & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Speciale <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — salami, ham & mushrooms" data-de="Gefaltet — Salami, Schinken & Champignons">Folded — salami, ham & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Amico <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — minced meat, salami, mushrooms & jalapeños" data-de="Gefaltet — Hackfleisch, Salami, Champignons & Jalapeños">Folded — minced meat, salami, mushrooms & jalapeños</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Calzone Amore <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Folded — tomatoes, minced meat & onions" data-de="Gefaltet — Tomaten, Hackfleisch & Zwiebeln">Folded — tomatoes, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="flammkuchen">
+  <div class="menu-section__head"><h2>&#128293; <span data-en="Flammkuchen & Doncapello" data-de="Flammkuchen & Doncapello">Flammkuchen & Doncapello</span></h2><span class="count" data-en="Thin & crispy" data-de="Dünn & knusprig">Thin & crispy</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello</div><div class="menu-item__desc" data-en="Classic Flammkuchen — crème base" data-de="Klassischer Flammkuchen — Crème-fraîche-Basis">Classic Flammkuchen — crème base</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Spinaci</div><div class="menu-item__desc" data-en="Gorgonzola & spinach" data-de="Gorgonzola & Spinat">Gorgonzola & spinach</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Flammkuchen Prosciutto <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Ham & onions" data-de="Schinken & Zwiebeln">Ham & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Amore <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Tomatoes, minced meat & onions" data-de="Tomaten, Hackfleisch & Zwiebeln">Tomatoes, minced meat & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Flammkuchen Milano <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Ham, salami, mushrooms & minced meat" data-de="Schinken, Salami, Champignons & Hackfleisch">Ham, salami, mushrooms & minced meat</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Flammkuchen La Mia <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, onions & ham" data-de="Salami, Zwiebeln & Schinken">Salami, onions & ham</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Flammkuchen Rodeo Loves <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Bacon, salami & onions" data-de="Bacon, Salami & Zwiebeln">Bacon, salami & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Flammkuchen Mozzarella di Caprese</div><div class="menu-item__desc" data-en="Tomatoes, rocket & balsamic" data-de="Tomaten, Rucola & Balsamico">Tomatoes, rocket & balsamic</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Hawaii <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Ham & pineapple" data-de="Schinken & Ananas">Ham & pineapple</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Speciale <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Salami, ham & mushrooms" data-de="Salami, Schinken & Champignons">Salami, ham & mushrooms</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Lachs</div><div class="menu-item__desc" data-en="Salmon & spinach" data-de="Lachs & Spinat">Salmon & spinach</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Philadelphia</div><div class="menu-item__desc" data-en="Salmon, rocket & cream cheese" data-de="Lachs, Rucola & Frischkäse">Salmon, rocket & cream cheese</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;12,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Doncapello Quattro Formaggi</div><div class="menu-item__desc" data-en="Gorgonzola, cream cheese & Grana Padano" data-de="Gorgonzola, Frischkäse & Grana Padano">Gorgonzola, cream cheese & Grana Padano</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;13,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="burgers">
+  <div class="menu-section__head"><h2>&#127828; <span data-en="Burgers" data-de="Burger">Burgers</span></h2><span class="count" data-en="All Halal &middot; with fries or wedges" data-de="Alle Halal &middot; mit Pommes oder Wedges">All Halal &middot; with fries or wedges</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Tryaki di Pollo <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Chicken fillet, salad, BBQ sauce & pickles" data-de="Hähnchenfilet, Salat, BBQ-Sauce & Gurken">Chicken fillet, salad, BBQ sauce & pickles</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;7,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Mexican di Salsa <span class="menu-item__badges"><span class="mbadge halal">Halal</span><span class="mbadge spicy">&#127798;</span></span></div><div class="menu-item__desc" data-en="Beef, cheddar sauce, jalapeños & salsa" data-de="Rindfleisch, Cheddar-Sauce, Jalapeños & Salsa">Beef, cheddar sauce, jalapeños & salsa</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;7,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Mr. Beef <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Beef burger with pickles" data-de="Rindfleisch-Burger mit Gurken">Beef burger with pickles</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Cheeseburger Style <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Beef burger, mozzarella & fried egg" data-de="Rindfleisch-Burger, Mozzarella & Spiegelei">Beef burger, mozzarella & fried egg</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Pastrami Burger <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Beef with turkey bacon & pickles" data-de="Rindfleisch mit Truthahn-Bacon & Gurken">Beef with turkey bacon & pickles</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Italiano Posto <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Chicken fillet, tomatoes, mozzarella & cheddar" data-de="Hähnchenfilet, Tomaten, Mozzarella & Cheddar">Chicken fillet, tomatoes, mozzarella & cheddar</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Don di Caprese</div><div class="menu-item__desc" data-en="Mozzarella, tomatoes, rocket, balsamic & salad" data-de="Mozzarella, Tomaten, Rucola, Balsamico & Salat">Mozzarella, tomatoes, rocket, balsamic & salad</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Vegano <span class="menu-item__badges"><span class="mbadge vegan">Vegan</span></span></div><div class="menu-item__desc" data-en="Vegan burger with potato wedges or fries" data-de="Veganer Burger mit Kartoffelecken oder Pommes">Vegan burger with potato wedges or fries</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Quattro Formaggi di Napoli</div><div class="menu-item__desc" data-en="Halloumi schnitzel, cream cheese, parmesan, mozzarella & salad" data-de="Halloumi-Schnitzel, Frischkäse, Parmesan, Mozzarella & Salat">Halloumi schnitzel, cream cheese, parmesan, mozzarella & salad</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;11,90</div></div>
+  </div>
+</section>
+
+<div class="inline-cta">
+  <div class="inline-cta__text" data-en="Hungry yet?" data-de="Schon hungrig?">Hungry yet?<span data-en="Door to door across Leipzig." data-de="Bis vor die Tür, in ganz Leipzig.">Door to door across Leipzig.</span></div>
+  <a href="tel:+491774700696" class="btn btn--light btn--lg" data-en="&#128222; Call to Order" data-de="&#128222; Anrufen &amp; Bestellen">&#128222; Call to Order</a>
+</div>
+
+<section class="menu-section" id="salads">
+  <div class="menu-section__head"><h2>&#129367; <span data-en="Salads" data-de="Salate">Salads</span></h2><span class="count" data-en="Fresh" data-de="Frisch">Fresh</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Insalata Mista</div><div class="menu-item__desc" data-en="Mixed salad, olives, cucumber, tomatoes, onions & corn" data-de="Gemischter Salat, Oliven, Gurke, Tomaten, Zwiebeln & Mais">Mixed salad, olives, cucumber, tomatoes, onions & corn</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;9,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Greek Salat</div><div class="menu-item__desc" data-en="Mixed salad, feta, olives, cucumber & onions" data-de="Gemischter Salat, Feta, Oliven, Gurke & Zwiebeln">Mixed salad, feta, olives, cucumber & onions</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Insalata Tonno</div><div class="menu-item__desc" data-en="Mixed salad, tomatoes, cucumber, corn, onions & tuna" data-de="Gemischter Salat, Tomaten, Gurke, Mais, Zwiebeln & Thunfisch">Mixed salad, tomatoes, cucumber, corn, onions & tuna</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Thunfischsalat</div><div class="menu-item__desc" data-en="Iceberg, onions, corn & tuna" data-de="Eisbergsalat, Zwiebeln, Mais & Thunfisch">Iceberg, onions, corn & tuna</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Hähnchensalat <span class="menu-item__badges"><span class="mbadge halal">Halal</span></span></div><div class="menu-item__desc" data-en="Iceberg, corn, onions & chicken strips" data-de="Eisbergsalat, Mais, Zwiebeln & Hähnchenstreifen">Iceberg, corn, onions & chicken strips</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;10,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="starters">
+  <div class="menu-section__head"><h2>&#127838; <span data-en="Starters" data-de="Vorspeisen">Starters</span></h2><span class="count" data-en="To share" data-de="Zum Teilen">To share</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Knoblauchbrot</div><div class="menu-item__desc" data-en="Toasted bread with garlic & oil" data-de="Geröstetes Brot mit Knoblauch & Öl">Toasted bread with garlic & oil</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;6,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bruschetta al Pomodoro</div><div class="menu-item__desc" data-en="Toasted bread with garlic & tomatoes" data-de="Geröstetes Brot mit Knoblauch & Tomaten">Toasted bread with garlic & tomatoes</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;7,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bruschetta alla Minsana</div><div class="menu-item__desc" data-en="Toasted bread, garlic, aubergine & chickpea cream" data-de="Geröstetes Brot, Knoblauch, Aubergine & Kichererbsencreme">Toasted bread, garlic, aubergine & chickpea cream</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;6,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bruschetta alla Salmon</div><div class="menu-item__desc" data-en="Toasted bread, garlic, cream cheese & salmon" data-de="Geröstetes Brot, Knoblauch, Frischkäse & Lachs">Toasted bread, garlic, cream cheese & salmon</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;8,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="kids">
+  <div class="menu-section__head"><h2>&#128118; <span data-en="Kids Menu" data-de="Kindermenü">Kids Menu</span></h2><span class="count" data-en="For the little ones" data-de="Für die Kleinen">For the little ones</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Kindermenü Kinderpizza</div><div class="menu-item__desc" data-en="Tomato sauce, cheese & 1 topping of choice" data-de="Tomatensauce, Käse & 1 Belag nach Wahl">Tomato sauce, cheese & 1 topping of choice</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;8,90</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="sides">
+  <div class="menu-section__head"><h2>&#129474; <span data-en="Sides & Sauces" data-de="Beilagen & Saucen">Sides & Sauces</span></h2><span class="count" data-en="Dips & extras" data-de="Dips & Extras">Dips & extras</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Ketchup</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;0,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">BBQ-Dip</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;1,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Garlic Dip</div><div class="menu-item__desc" data-en="Knoblauch" data-de="Knoblauch">Knoblauch</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;1,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Curry</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;1,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Mayonnaise</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;1,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Sweet Chilli</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,00</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="coffee">
+  <div class="menu-section__head"><h2>&#9749; <span data-en="Coffee & Tea" data-de="Kaffee & Tee">Coffee & Tea</span></h2><span class="count" data-en="Italian coffee" data-de="Italienischer Kaffee">Italian coffee</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Espresso</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Cappuccino</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Tea (various)</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Coffee</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Milk Coffee</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Latte Macchiato</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Hot Chocolate</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Green Tea</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;5,25</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Herbal Tea</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;6,75</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Chai Tea</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;7,25</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="drinks">
+  <div class="menu-section__head"><h2>&#129380; <span data-en="Drinks" data-de="Getränke">Drinks</span></h2><span class="count" data-en="0,5 l also available (+€1)" data-de="0,5 l ebenfalls erhältlich (+1 €)">0,5 l also available (+€1)</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Cola / Cola Zero / Fanta</div><div class="menu-item__desc" data-en="0,3 l" data-de="0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Sprite / Spezi</div><div class="menu-item__desc" data-en="0,3 l" data-de="0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Iced Tea Peach / Lemon</div><div class="menu-item__desc" data-en="0,3 l" data-de="Eistee Pfirsich / Zitrone — 0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Apple / Orange juice & spritzer</div><div class="menu-item__desc" data-en="0,3 l" data-de="Apfelsaft / Orangensaft / Saftschorle — 0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Bitter Lemon / Ginger Ale / Tonic</div><div class="menu-item__desc" data-en="0,3 l" data-de="0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Water still / sparkling</div><div class="menu-item__desc" data-en="0,3 l" data-de="Wasser still / sprudelnd — 0,3 l">0,3 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;2,50</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Club Mate</div><div class="menu-item__desc" data-en="0,5 l" data-de="0,5 l">0,5 l</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,00</div></div>
+  </div>
+</section>
+
+<section class="menu-section" id="dessert">
+  <div class="menu-section__head"><h2>&#127856; <span data-en="Dessert" data-de="Dessert">Dessert</span></h2><span class="count" data-en="Sweet finish" data-de="Süßer Abschluss">Sweet finish</span></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Brownie</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Tiramisu</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,90</div></div>
+    <div class="menu-item"><div class="menu-item__main"><div class="menu-item__name">Cheesecake</div></div><div class="menu-item__dots"></div><div class="menu-item__price">&euro;3,90</div></div>
+  </div>
+</section>
+
+<!-- FOOTNOTE -->
+<div class="menu-footnote">
+  <div class="menu-footnote__inner">
+    <span data-en="Prices for collection & delivery. Minimum order €15 within our service area. Allergen info available on request." data-de="Preise für Abholung & Lieferung. Mindestbestellwert 15 € im Liefergebiet. Allergeninfos auf Anfrage.">Prices for collection & delivery. Minimum order €15 within our service area. Allergen info available on request.</span>
+    <span data-en="Halal certified &middot; Large vegan range &middot; Jahnallee 27, 04109 Leipzig" data-de="Halal-zertifiziert &middot; Große vegane Auswahl &middot; Jahnallee 27, 04109 Leipzig">Halal certified &middot; Large vegan range &middot; Jahnallee 27, 04109 Leipzig</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a href="index.html" class="logo"><img class="logo__img" src="assets/napoli-logo.png" alt="Pizzeria Napoli logo" onerror="this.style.display='none'"></a>
+      <p class="tagline" data-en="The neighborhood pizzeria on Jahnallee. Halal certified, big portions, huge vegan range." data-de="Die Pizzeria im Viertel an der Jahnallee. Halal-zertifiziert, große Portionen, riesige vegane Auswahl.">The neighborhood pizzeria on Jahnallee. Halal certified, big portions, huge vegan range.</p>
+    </div>
+    <div>
+      <h4 data-en="Visit" data-de="Besuch">Visit</h4>
+      <p>Jahnallee 27<br>04109 Leipzig</p>
+      <p>Mon&ndash;Thu 11&ndash;22<br>Fri 15&ndash;22<br>Sat&ndash;Sun 11&ndash;22</p>
+    </div>
+    <div>
+      <h4 data-en="Contact" data-de="Kontakt">Contact</h4>
+      <p><a href="https://wa.me/4915733140648?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20bestellen." target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+      <p><a href="tel:+491774700696">+49 177 4700696</a></p>
+      <p><a href="tel:+4934124747361">+49 341 24747361</a></p>
+      <p><a href="https://www.instagram.com/pizzeria1584" target="_blank" rel="noopener noreferrer">Instagram &rarr;</a></p>
+    </div>
+    <div>
+      <h4 data-en="More" data-de="Mehr">More</h4>
+      <p><a href="index.html" data-en="Home" data-de="Start">Home</a></p>
+      <p><a href="index.html#reviews" data-en="Reviews" data-de="Bewertungen">Reviews</a></p>
+      <p><a href="index.html#location" data-en="Location & Hours" data-de="Adresse & Zeiten">Location & Hours</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Pizzeria Napoli &middot; Jahnallee 27, Leipzig</span>
+    <span data-en="Dine-in &middot; Takeaway &middot; Delivery &middot; Halal Certified" data-de="Vor Ort &middot; Mitnehmen &middot; Lieferung &middot; Halal-zertifiziert">Dine-in &middot; Takeaway &middot; Delivery &middot; Halal Certified</span>
+  </div>
+</footer>
+
+<!-- STICKY ORDER BAR -->
+<div class="sticky-order">
+  <div class="sticky-order__info">
+    <strong data-en="102+ pizzas &middot; from €8,90" data-de="102+ Pizzen &middot; ab 8,90 €">102+ pizzas &middot; from €8,90</strong>
+    <span class="min" data-en="Min. order €15 &middot; delivery across Leipzig" data-de="Mindestbestellung 15 € &middot; Lieferung in ganz Leipzig">Min. order €15 &middot; delivery across Leipzig</span>
+  </div>
+  <div class="sticky-order__cta">
+    <a href="https://wa.me/4915733140648?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20bestellen." target="_blank" rel="noopener noreferrer" class="phone-link">&#128172; <span data-en="WhatsApp" data-de="WhatsApp">WhatsApp</span></a>
+    <a href="tel:+491774700696" class="btn btn--primary btn--sm" data-en="&#128222; Call to Order" data-de="&#128222; Anrufen">&#128222; Call to Order</a>
+  </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-stack">
+  <a href="https://wa.me/4915733140648?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20bestellen." target="_blank" rel="noopener noreferrer" class="floating-btn wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.6 15.05L2 22l5.05-1.32A10 10 0 1 0 12 2z"/></svg></a>
+  <a href="tel:+491774700696" class="floating-btn tel" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+
+<script>
+const burger=document.getElementById('hamburger');
+const drawer=document.getElementById('drawer');
+function toggleDrawer(open){document.body.classList.toggle('drawer-open',open);burger.setAttribute('aria-expanded',open?'true':'false');}
+burger.addEventListener('click',()=>toggleDrawer(!document.body.classList.contains('drawer-open')));
+drawer.addEventListener('click',(e)=>{if(e.target===drawer)toggleDrawer(false);});
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleDrawer(false)));
+
+const links=[...document.querySelectorAll('.menu-subnav a')];
+const secs=links.map(l=>document.querySelector(l.getAttribute('href')));
+const spy=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id='#'+e.target.id;
+      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));
+      const active=links.find(l=>l.getAttribute('href')===id);
+      if(active){const track=active.parentElement;track.scrollTo({left:active.offsetLeft-(track.clientWidth/2)+(active.offsetWidth/2),behavior:'smooth'});}
+    }
+  });
+},{rootMargin:'-140px 0px -65% 0px'});
+secs.forEach(s=>{if(s)spy.observe(s);});
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>
